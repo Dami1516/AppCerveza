@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "889304564292",
+    "firebase_url": "https://app-cerveza-dfuentes.firebaseio.com",
+    "project_id": "app-cerveza-dfuentes",
+    "storage_bucket": "app-cerveza-dfuentes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889304564292:android:ea3ec91bd831a9ec",
+        "android_client_info": {
+          "package_name": "dfuentes.appcerveza"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889304564292-fa4mmvngl12qbbtlok99fr4mguveu8t2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dfuentes.appcerveza",
+            "certificate_hash": "d4d328adaef52712f3ebb8e6a58461d66352c605"
+          }
+        },
+        {
+          "client_id": "889304564292-5ikucp9aqoseau8k4a5cing6u6c0f7r1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUW_CNWNLC8lJE9056q89Rz1H-Tsi9CpI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889304564292-5ikucp9aqoseau8k4a5cing6u6c0f7r1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

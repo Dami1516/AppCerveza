@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout android:id="@+id/layout_receta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily=""
+            android:gravity="center_horizontal"
+            android:text="Titulo"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"/>
+
+
+        <TableLayout
+            android:id="@+id/tabla_maltas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/common_google_signin_btn_text_light_focused"></TableLayout>
+
+        <TableLayout
+            android:id="@+id/tabla_lupulos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/common_google_signin_btn_text_light_focused"></TableLayout>
+
+</LinearLayout>

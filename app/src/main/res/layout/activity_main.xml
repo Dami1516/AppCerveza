@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:theme="@style/AppTheme.NoActionBar"
+    tools:context="dfuentes.appcerveza.MainActivity">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/fondo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_init">
+
+    </ImageView>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="130dp"
+        android:layout_gravity="top"
+        app:srcCompat="@drawable/bg_title" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/ConstraintLayout">
+
+        <Button
+            android:id="@+id/button_new"
+            android:layout_width="250dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_new"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/button_actual"
+            android:layout_width="250dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_actual"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/button_history"
+            android:layout_width="250dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="151dp"
+            android:background="@drawable/button_history"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/button_recipe"
+            android:layout_width="250dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="248dp"
+            android:background="@drawable/button_recipe"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/button_info"
+            android:layout_width="250dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="345dp"
+            android:background="@drawable/button_info"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/text_State_Arduino"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</FrameLayout>
+
