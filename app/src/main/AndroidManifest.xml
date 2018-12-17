@@ -7,9 +7,9 @@
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
-        android:normalScreens="false"
+        android:normalScreens="true"
         android:smallScreens="false"
-        android:xlargeScreens="false" />
+        android:xlargeScreens="true" />
 
     <application
         android:allowBackup="true"
@@ -61,6 +61,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="dfuentes.appcerveza.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".RecipeSingleActivity"
+            android:label="@string/title_activity_recipe_single"
+            android:parentActivityName=".RecipeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dfuentes.appcerveza.RecipeActivity" />
         </activity>
     </application>
 
