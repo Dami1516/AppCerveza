@@ -24,10 +24,10 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import objetos.FirebaseReferences;
-import objetos.coccion_actual;
-import objetos.datos_arduino;
-import objetos.recetas;
+import extras.FirebaseReferences;
+import extras.coccion_actual;
+import extras.datos_arduino;
+import extras.recetas;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -184,21 +184,22 @@ public class MainActivity extends AppCompatActivity {
         btn_inf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                database.getReference(FirebaseReferences.ESTADO_REFERENCE).setValue(0);
+                Intent intent = new Intent (v.getContext(), RusticActivity.class);
+                intent.putExtra("Coccion",coccionActual);
+                startActivityForResult(intent, 0);
             }
         });
         //Fin implementacion "click" boton button_info
 
         //Implementamos el evento "click" del boton button_history
-        Button btn_his = (Button) findViewById(R.id.button_history);
+        /*Button btn_his = (Button) findViewById(R.id.button_history);
         btn_his.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 database.getReference(FirebaseReferences.ESTADO_REFERENCE).setValue(7);
             }
-        });
+        });*/
         //Fin implementacion "click" boton button_history
     }
 
@@ -211,8 +212,8 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Iterable<DataSnapshot> iterable_recetas = dataSnapshot.getChildren();
                 for (DataSnapshot rec : iterable_recetas) {
-                    if (((recetas)(rec.getValue(objetos.recetas.class))).getNombre().equals(coccionActual.getReceta_elegida()))
-                    recetaActual=(recetas)(rec.getValue(objetos.recetas.class));
+                    if (((recetas)(rec.getValue(extras.recetas.class))).getNombre().equals(coccionActual.getReceta_elegida()))
+                    recetaActual=(recetas)(rec.getValue(extras.recetas.class));
                 }
             }
 

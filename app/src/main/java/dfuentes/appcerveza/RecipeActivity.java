@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,9 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
-import objetos.FirebaseReferences;
-import objetos.coccion_actual;
-import objetos.recetas;
+import extras.FirebaseReferences;
+import extras.coccion_actual;
+import extras.recetas;
 
 public class RecipeActivity extends AppCompatActivity{
 
@@ -63,6 +62,7 @@ public class RecipeActivity extends AppCompatActivity{
 
             }
         });
+        findViewById(R.id.pg_loading).setVisibility(View.VISIBLE);
     }
 
     private void recuperarRecetas() {
@@ -74,7 +74,7 @@ public class RecipeActivity extends AppCompatActivity{
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Iterable<DataSnapshot> iterable_recetas = dataSnapshot.getChildren();
                 for (DataSnapshot rec : iterable_recetas) {
-                    recetas.add(rec.getValue(objetos.recetas.class));
+                    recetas.add(rec.getValue(extras.recetas.class));
                 }
                 EditText toSearch = findViewById(R.id.textBusqueda);
                 cargarDatos(toSearch.getText().toString());
@@ -97,11 +97,11 @@ public class RecipeActivity extends AppCompatActivity{
                 if (position<0) {//se presiono el boton de detalles
                     Intent intent = new Intent(getApplicationContext(), RecipeSingleActivity.class);
                     intent.putExtra("Coccion", coccionActual);
-                    intent.putExtra("Receta", recetas.get(position*(-1)+1));
+                    intent.putExtra("Receta", recetas.get(position*(-1)-1));
                     startActivity(intent);
                 }
-                else {
-                    if (coccionActual.getArduinoConectado()) {
+                else {//Se presiono el boton de cocinar
+                    if (coccionActual.getArduinoConectado()) {//Chequeo si esta disponible el arduino
                         Intent intent = new Intent(getApplicationContext(), ActualActivity.class);
                         intent.putExtra("Coccion", coccionActual);
                         intent.putExtra("Receta", recetas.get(position));

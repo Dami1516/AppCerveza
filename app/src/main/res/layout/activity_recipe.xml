@@ -11,7 +11,7 @@
     android:fillViewport="true">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/result_layout"
+        android:id="@+id/recipe_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:animateLayoutChanges="true"

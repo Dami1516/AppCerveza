@@ -1,6 +1,5 @@
 package dfuentes.appcerveza;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-import objetos.recetas;
+import extras.recetas;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolderResult> {
 

@@ -1,4 +1,4 @@
-package objetos;
+package extras;
 
 public class datos_arduino {
 

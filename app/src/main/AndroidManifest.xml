@@ -72,6 +72,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="dfuentes.appcerveza.RecipeActivity" />
         </activity>
+
+        <activity
+            android:name=".RusticActivity"
+            android:label="@string/title_activity_recipe"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dfuentes.appcerveza.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

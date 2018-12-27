@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/AppTheme.NoActionBar"
+    tools:context="dfuentes.appcerveza.RecipeSingleActivity"
+    android:background="@android:color/background_light"
+    android:fillViewport="true">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/recipe_single_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titleRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/ibuRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintTop_toBottomOf="@id/titleRecipe"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/alcoholRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintTop_toBottomOf="@id/titleRecipe"
+            app:layout_constraintLeft_toRightOf="@id/ibuRecipe"/>
+
+        <TextView
+            android:id="@+id/colorRecipe"
+            android:layout_width="wrap_content"
+            android:text="Color: "
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/ibuRecipe"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="        "
+            app:layout_constraintTop_toBottomOf="@id/ibuRecipe"
+            app:layout_constraintLeft_toRightOf="@id/colorRecipe" />
+
+        <TextView
+            android:id="@+id/levaduraRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/ibuRecipe"
+            app:layout_constraintLeft_toRightOf="@id/color" />
+
+        <TextView
+            android:id="@+id/diRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/colorRecipe"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/dfRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/colorRecipe"
+            app:layout_constraintLeft_toRightOf="@id/diRecipe" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

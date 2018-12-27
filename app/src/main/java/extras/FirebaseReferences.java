@@ -1,4 +1,4 @@
-package objetos;
+package extras;
 
 public class FirebaseReferences {
     final public static String COCCION_ACTUAL_REFERENCE = "coccion_actual";
