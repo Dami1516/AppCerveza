@@ -55,15 +55,36 @@ public class ActualActivity extends AppCompatActivity {
 
     protected void viewSegunEstado(){
         TextView contenido = ((TextView) findViewById(R.id.contenido));
-        switch (coccionActual.getEstado()){
+        switch (coccionActual.getEstado()) {
             case 1: //Receta Elegida,esperando para iniciar
                 contenido.setText("Por favor verifique que se encuentren conectadas las resistencias a la olla y al controlador, luego verifique tambien que el termomemetro de la olla se encuentra dentro de la misma, por último pulse el botón del controlador para dar inicio al proceso");
                 break;
             case 2:
-                contenido.setText("Calentando agua para maceración:\nTemperatura actual: "+coccionActual.getTemp_olla()+"ºC\n\n\nTemperatura objetivo: ("+receta.getTemp_mace()+" ºC)"+receta.getTemp_mace()+" ºC)");
+                contenido.setText("Calentando agua para maceración:\n\nTemperatura actual: " + coccionActual.getTemp_olla() + "ºC\n\n\nTemperatura objetivo: " + Math.addExact(receta.getTemp_mace(),10) + " ºC");
                 break;
             case 3:
-                contenido.setText("El agua ya llego a la temperatura objetivo, por favor vierta la misma en el macerador, coloque los granos y el termometro y luego pulse continuar");
+                contenido.setText("El agua ya llego a la temperatura objetivo, por favor vierta la misma en el macerador, coloque los granos y el termómetro y luego pulse continuar");
+                break;
+            case 4:
+                contenido.setText("En proceso de maceración:\n\nTemperatura actual: " + coccionActual.getTemp_mace() + " °C\n\n\nTemperatura ideal: " + receta.getTemp_mace() + " °C");
+                break;
+            case 5:
+                contenido.setText("Por favor conecte la bomba al marerador para recircular, luego presione el boton para continuar");
+                break;
+            case 6:
+                contenido.setText("Recirculando y calentando agua para lavado:\n\nTemperatura actual: "+coccionActual.getTemp_mace()+" °C\n\n\nTemperatura ideal: "+receta.getTemp_mace()+" °C");
+                break;
+            case 7:
+                contenido.setText("Esperando para iniciar lavado, traslade el agua hacia la conservadora de lavado, luego prepare la olla de hervido y presione el boton para continuar");
+                break;
+            case 8:
+                contenido.setText("Lavando los granos, cuando se termine el agua de lavado presione el boton");
+                break;
+            case 9:
+                contenido.setText("Calentando agua para hervido");
+                break;
+            case 10:
+                contenido.setText("Cocinando");
                 break;
         }
     }

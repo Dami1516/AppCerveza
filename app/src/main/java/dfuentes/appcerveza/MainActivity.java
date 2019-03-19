@@ -123,15 +123,15 @@ public class MainActivity extends AppCompatActivity {
                     if (datosArduino!=null)
                         timeStampArduino=datosArduino.getTimestamp();
                     else
-                        textIP.setText("Conectandose a Arduino...");
+                        textIP.setText("Iniciando conexión...");
                 }
                 else {
                     if ((datosArduino.getTimestamp() - timeStampArduino) == 0) {
-                        textIP.setText("Arduino fuera de línea");
+                        textIP.setText("Sistema fuera de linea");
                         coccionActual.setArduinoConectado(false);
                     }
                     else {
-                        textIP.setText("Arduino en línea en " + datosArduino.getIp());
+                        textIP.setText("Sistema en linea");
                         coccionActual.setArduinoConectado(true);
                     }
                 }

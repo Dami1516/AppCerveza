@@ -105,6 +105,7 @@ public class RecipeActivity extends AppCompatActivity{
                         Intent intent = new Intent(getApplicationContext(), ActualActivity.class);
                         intent.putExtra("Coccion", coccionActual);
                         intent.putExtra("Receta", recetas.get(position));
+                        setCoccionActual(position);
                         startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "Asegurese que el sistema se encuentre online antes de iniciar", Toast.LENGTH_SHORT).show();
@@ -114,6 +115,13 @@ public class RecipeActivity extends AppCompatActivity{
         });
         findViewById(R.id.pg_loading).setVisibility(View.INVISIBLE);
         recycler.setAdapter(adapter);
+    }
+
+    protected void setCoccionActual(int indexReceta){
+        recetas rec=recetas.get(indexReceta);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database.getReference(FirebaseReferences.ESTADO_REFERENCE).setValue(1);
+        database.getReference(FirebaseReferences.RECETA_ELEGIDA_REFERENCE).setValue(rec.getNombre());
     }
 
     protected ArrayList<recetas> filtrarRecetas(String filtro){

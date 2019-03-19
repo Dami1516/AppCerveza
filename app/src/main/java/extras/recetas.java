@@ -17,11 +17,12 @@ public class recetas implements Serializable {
     HashMap<String,Object> lupulos;
     HashMap<String,Object> maltas;
     String nombre;
+    String creador;
 
     public recetas() {
     }
 
-    public recetas(double alcohol, long color, long df, long di, long ibu, String levadura, long t_coccion, long t_mace, long temp_mace, Object lupulos, Object maltas) {
+    public recetas(double alcohol, long color, long df, long di, long ibu, String levadura, long t_coccion, long t_mace, long temp_mace, Object lupulos, Object maltas, String creador) {
 
         this.alcohol = alcohol;
         this.color = color;
@@ -34,6 +35,7 @@ public class recetas implements Serializable {
         this.temp_mace = temp_mace;
         this.lupulos = (HashMap<String,Object>)lupulos;
         this.maltas = (HashMap<String,Object>)maltas;
+        this.creador = creador;
     }
 
     public double getAlcohol() {
@@ -132,4 +134,11 @@ public class recetas implements Serializable {
         this.nombre = nombre;
     }
 
+    public String getCreador() {
+        return creador;
+    }
+
+    public void setCreador(String creador) {
+        this.creador = creador;
+    }
 }
